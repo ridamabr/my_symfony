@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello SessionController!{% endblock %}
+
+{% block body %}
+
+<h1> Votre viste n° {{ app.session.get('nbrVisite') }} sur notre site</h1>
+
+{% endblock %}
