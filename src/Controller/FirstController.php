@@ -20,9 +20,10 @@ class FirstController extends AbstractController
         return $this->render('first/index.html.twig', [
 
             'name' => 'reda',
-            'firstName' => 'mabrouk'
+            'firstName' => 'mabrouk',
+            'path' =>  '   ',
         ]);
-    }
+    } 
 
 
     #[Route('/multi/{entier1}/{entier2}', name: 'multi', methods: 'GET', requirements: ['entier1' => '\d+', 'entier2' => '\d+'])]
@@ -34,18 +35,18 @@ class FirstController extends AbstractController
         return new Response("<p>$resultat</p>");
     }
 
-    // #[Route('{/maVar}', name: 'app_second', methods: 'GET')]
-    // public function maVar($maVar): Response
-    // {
+    #[Route('{/maVar}', name: 'app_second', methods: 'GET')]
+    public function maVar($maVar): Response
+    {
 
-    //     // dd($request);
+        // dd($request);
 
-    //     return new Response(
+        return new Response(
             
-    //     "<html> 
-    //     <body>ma var: $maVar</body>
-    //     </html>"
-    //     );
-    // }
+        "<html> 
+        <body>ma var: $maVar</body>
+        </html>"
+        );
+    }
 
 }
